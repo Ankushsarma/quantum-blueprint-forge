@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import logo from "@/assets/logo.png";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -27,18 +26,15 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-md bg-[#0F0718]/80 border-b border-white/5" : "bg-transparent"
+        scrolled ? "backdrop-blur-md bg-[#0F0718]/70 border-b border-white/5" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         <a href="#home" className="flex items-center gap-2 font-display text-xl font-extrabold tracking-tight">
-          <img
-            src={logo}
-            alt="Beyond Your Imagination Logo"
-            className="h-10 w-auto object-contain"
-            style={{ filter: "drop-shadow(0 0 8px rgba(168,108,255,0.5))" }}
-          />
-          <span className="hidden sm:inline text-white text-base font-bold">Beyond Your Imagination</span>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-[#A86CFF] to-[#7E52D9] shadow-[0_0_20px_rgba(168,108,255,0.5)]">
+            <span className="text-lg font-black text-white">B</span>
+          </span>
+          <span className="hidden sm:inline">Beyond</span>
         </a>
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -49,16 +45,7 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="https://beyondyourimagination.shop"
-            className="inline-flex items-center gap-1.5 rounded-[10px] border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white/15 hover:border-white/40"
-          >
-            <span>Main Website</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-            </svg>
-          </a>
+        <div className="hidden md:block">
           <a
             href="#contact"
             className="btn-glow inline-flex items-center justify-center rounded-[10px] bg-white px-5 py-2.5 text-sm font-semibold text-black"
@@ -90,21 +77,11 @@ export function Navbar() {
                 </a>
               </li>
             ))}
-            <li className="mt-2 flex flex-col gap-2">
-              <a
-                onClick={() => setOpen(false)}
-                href="https://beyondyourimagination.shop"
-                className="flex items-center justify-center gap-2 rounded-[10px] border border-white/20 bg-white/5 px-4 py-2.5 text-center text-sm font-semibold text-white"
-              >
-                <span>Main Website</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-              </a>
+            <li>
               <a
                 onClick={() => setOpen(false)}
                 href="#contact"
-                className="block rounded-[10px] bg-white px-4 py-2.5 text-center text-sm font-semibold text-black"
+                className="mt-2 block rounded-[10px] bg-white px-4 py-2.5 text-center text-sm font-semibold text-black"
               >
                 Get Started
               </a>

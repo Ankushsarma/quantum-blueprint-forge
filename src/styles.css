@@ -140,15 +140,6 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-/* Hide Lovable Badge */
-#lovable-badge-container, 
-[id^="lovable-"],
-[class*="lovable-badge"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
 @layer base {
   * {
     border-color: var(--color-border);
