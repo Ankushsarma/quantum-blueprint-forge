@@ -1,10 +1,21 @@
 import { motion } from "motion/react";
 import robot from "@/assets/robot.jpg";
+import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden radial-purple pt-32 pb-16 md:pt-40 md:pb-24">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-6 md:px-10">
+      <video
+        src={heroVideo.url}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-screen"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0F0718]/60 via-[#0F0718]/40 to-[#0F0718]/80" />
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
